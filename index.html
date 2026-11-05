@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-lang="en">
+<html lang="en" data-lang="en" class="typing">
 <head>
 <meta charset="utf-8">
 
@@ -227,8 +227,14 @@
   .c-l { display: block; font-size: 2rem; font-weight: 800; font-stretch: 120%; line-height: 1; }
   .c-w { display: block; margin-top: .5rem; font-weight: 600; font-size: .95rem; }
   .c-j { display: block; font-size: .8rem; font-family: var(--jp); opacity: .75; }
-  #about .values, #about > .wrap > .section-head { display: none; }
-  #about .approach { margin-top: 0; }
+  #about .values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 3rem; border-top: 0; }
+  #about .values li { display: block; padding: 2rem 0 2.4rem; border-top: 1px solid var(--rule); border-bottom: 0; }
+  #about .values .v-letter { display: none; }
+  #about .values .v-name { display: block; font-size: 1.3rem; }
+  #about .values .v-name::first-letter { color: var(--ink); box-shadow: inset 0 -.32em 0 var(--sun); }
+  #about .values .v-name small { margin-top: .2rem; }
+  #about .values .v-desc { margin-top: .9rem; max-width: none; }
+  @media (max-width: 860px) { #about .values { grid-template-columns: 1fr; } }
   @media (max-width: 860px) { .c-j { font-size: .72rem; white-space: nowrap; } .band-list { grid-template-columns: repeat(3, 1fr); } .band-list li:nth-child(4) { border-left: 0; } .band-list li { border-top: 1px solid rgba(30,33,38,.18); } }
 </style>
 
@@ -253,6 +259,18 @@
   .svc .ext, .btn { font-family: var(--mono); font-weight: 500; font-size: .92rem; }
   html[data-lang="ja"] .svc .ext, html[data-lang="ja"] .btn { font-family: var(--jp); font-weight: 700; }
   @media (prefers-reduced-motion: reduce) { .hero h1 .en::after, .hero h1 .ja::after { animation: none; } }
+</style>
+
+<style>
+  .hero-c .mark li { animation: none; opacity: 1; transform: none; }
+  .hero-c .mark .letter { position: relative; display: inline-block; }
+  html.typing .hero-c .mark .letter { visibility: hidden; }
+  html.typing .hero-c .mark .letter.on { visibility: visible; }
+  .hero-c .mark .letter.cur::after {
+    content: ""; position: absolute; left: calc(100% + .06em); bottom: .04em;
+    width: .07em; height: .82em; background: var(--sun); animation: blink 1.1s steps(1) infinite;
+  }
+  html.typing .hero h1 .en::after, html.typing .hero h1 .ja::after { visibility: hidden; }
 </style>
 </head>
 <body>
@@ -315,32 +333,32 @@
         <li>
           <span class="v-letter" aria-hidden="true">F</span>
           <span class="v-name">Future<small>未来を見る</small></span>
-          <p class="v-desc"><span class="en">We look ahead to where real estate is going.</span><span class="ja">不動産の未来を見据えます。</span></p>
+          <p class="v-desc"><span class="en">We plan each property around where the city and the way people live are heading — looking not just at this year's returns, but five and ten years ahead.</span><span class="ja">目の前の収益だけでなく、5年後、10年後の街や暮らしの変化を見据えて、物件の運用方針を考えます。</span></p>
         </li>
         <li>
           <span class="v-letter" aria-hidden="true">I</span>
           <span class="v-name">Innovation<small>新しい価値を創る</small></span>
-          <p class="v-desc"><span class="en">We create new value that fits the times.</span><span class="ja">時代に合わせた新しい価値を創ります。</span></p>
+          <p class="v-desc"><span class="en">Long-term rentals, serviced apartments, short stays — we combine uses across the usual boundaries, and use our own platform, TOMOz, to give properties new ways to be lived in.</span><span class="ja">賃貸、サービスアパートメント、民泊。用途の垣根を越えて組み合わせ、自社プラットフォーム「TOMOz」も活かしながら、物件に新しい使われ方を生み出します。</span></p>
         </li>
         <li>
           <span class="v-letter" aria-hidden="true">R</span>
           <span class="v-name">Reliability<small>信頼を築く</small></span>
-          <p class="v-desc"><span class="en">We build trust with owners, residents and travelers alike.</span><span class="ja">オーナー様、住まう人、旅する人、すべての人との信頼を築きます。</span></p>
+          <p class="v-desc"><span class="en">Clear reporting for owners, attentive care for residents and guests. Keeping each promise, one at a time, is how we build trust that lasts.</span><span class="ja">オーナー様にはわかりやすい報告を、住まう人・旅する人には細やかな対応を。約束を一つひとつ守ることが、長く続く信頼につながると考えています。</span></p>
         </li>
         <li>
           <span class="v-letter" aria-hidden="true">O</span>
           <span class="v-name">Optimization<small>価値を引き出す</small></span>
-          <p class="v-desc"><span class="en">We draw out the value each property already holds.</span><span class="ja">一つひとつの物件が持つ価値を引き出します。</span></p>
+          <p class="v-desc"><span class="en">Location, layout, changing demand — we read each property's conditions closely and choose the way of running it that suits it best.</span><span class="ja">立地、間取り、需要の変化。物件ごとの条件を丁寧に読み解き、その物件にとって最適な運用のかたちを選びます。</span></p>
         </li>
         <li>
           <span class="v-letter" aria-hidden="true">W</span>
           <span class="v-name">Wealth<small>豊かさを育む</small></span>
-          <p class="v-desc"><span class="en">We grow prosperity for people and their lives through real estate.</span><span class="ja">不動産を通じて、人や暮らしの豊かさを育みます。</span></p>
+          <p class="v-desc"><span class="en">Steady returns for owners, and a better life for the people who live and stay in our properties. We grow both through real estate.</span><span class="ja">オーナー様にとっての経済的な豊かさと、住まう人・旅する人にとっての暮らしの豊かさ。その両方を、不動産を通じて育てていきます。</span></p>
         </li>
         <li>
           <span class="v-letter" aria-hidden="true">S</span>
           <span class="v-name">Sustainability<small>未来へつなぐ</small></span>
-          <p class="v-desc"><span class="en">We carry that value forward to the next generation.</span><span class="ja">その価値を、未来へつないでいきます。</span></p>
+          <p class="v-desc"><span class="en">We look after buildings with care, fit in with the neighborhoods around them, and pass on assets worth keeping to the next generation.</span><span class="ja">建物を大切に使い、地域と調和しながら、価値ある資産を次の世代へと引き継いでいきます。</span></p>
         </li>
       </ul>
 
@@ -526,6 +544,27 @@
       });
     });
     document.getElementById("year").textContent = new Date().getFullYear();
+  })();
+</script>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    var letters = document.querySelectorAll(".hero-c .mark .letter");
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce || !letters.length) { root.classList.remove("typing"); return; }
+    var i = 0;
+    function step() {
+      if (i > 0) letters[i - 1].classList.remove("cur");
+      if (i < letters.length) {
+        letters[i].classList.add("on", "cur");
+        i++;
+        setTimeout(step, i === 1 ? 260 : 170 + Math.random() * 90);
+      } else {
+        setTimeout(function () { root.classList.remove("typing"); }, 120);
+      }
+    }
+    setTimeout(step, 450);
   })();
 </script>
 </body>
