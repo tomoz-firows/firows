@@ -305,6 +305,34 @@
   .c-w { white-space: nowrap; }
   @media (max-width: 860px) { .band-list li { padding-inline: .2rem; } .c-w { font-size: .68rem; letter-spacing: -.03em; } }
 </style>
+
+<style>
+  /* services readability */
+  .badge { display: inline-block; margin-left: .6rem; vertical-align: .15em; padding: .1rem .6rem; border-radius: 999px;
+           background: var(--sun); color: var(--ink); font-size: .75rem; font-weight: 700; font-family: var(--jp); letter-spacing: .04em; }
+  .svc-points { list-style: none; margin: .9rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem; }
+  .svc-points li { padding: .45rem .9rem; border: 1px solid var(--rule); border-radius: 6px; background: var(--paper); font-weight: 600; font-size: .95rem; line-height: 1.4; }
+  .svc-points small { display: block; font-weight: 400; font-size: .75rem; color: var(--muted); }
+  .audience h3 { font-size: 1.15rem; color: var(--ink); }
+  .audience h3::before { content: ""; display: block; width: 1.6rem; height: 4px; background: var(--sun); margin-bottom: .8rem; }
+  .audience h3 span { color: var(--muted); }
+  @media (max-width: 860px) {
+    .audience { padding: 2rem 0 1rem; gap: 1.2rem; }
+    .audience h3 { font-size: 1.2rem; }
+    .svc-list { gap: 1rem; }
+    .svc { background: var(--paper); border-radius: 8px; padding: 1.4rem 1.25rem 1.5rem; }
+    .svc h4 { font-size: 1.2rem; }
+    .svc p { font-size: .98rem; }
+  }
+</style>
+
+<style>
+  .audience h3 > .en, .audience h3 > .ja { font-size: inherit; color: var(--ink); font-family: var(--sans); font-weight: 700; }
+  html[data-lang="ja"] .audience h3 > .ja { font-family: var(--jp); }
+  .audience h3 > span:not(.en):not(.ja) { display: block; margin-top: .35rem; font-size: .88rem; font-weight: 400; }
+  .svc-points li { flex: 1 1 0; min-width: 0; }
+  @media (max-width: 860px) { .svc-points li { padding: .45rem .6rem; } .svc-points small { font-size: .66rem; white-space: nowrap; letter-spacing: 0; } }
+</style>
 </head>
 <body>
 
@@ -448,11 +476,16 @@
           </div>
           <div class="svc">
             <h4><span class="en">Vacation rentals (minpaku)</span><span class="ja">住宅宿泊事業<wbr>（民泊）</span>
-              <span class="svc-jp"><span class="en">住宅宿泊事業・管理業・仲介業 — in preparation</span><span class="ja">準備中</span></span></h4>
+              <span class="badge"><span class="en">In preparation</span><span class="ja">準備中</span></span></h4>
             <p>
-              <span class="en">We are preparing to operate, manage and broker short-stay rentals under Japan's Private Lodging Business Act.</span>
-              <span class="ja">住宅宿泊事業法に<wbr>もとづき、<wbr>民泊の<wbr>運営（住宅宿泊事業）、<wbr>管理（住宅宿泊管理業）、<wbr>仲介（住宅宿泊仲介業）の<wbr>開始に<wbr>向けて、<wbr>準備を<wbr>進めています。</span>
+              <span class="en">We are preparing to start three businesses under Japan's Private Lodging Business Act:</span>
+              <span class="ja">住宅宿泊事業法に<wbr>もとづく、<wbr>次の<wbr>3つの<wbr>事業の<wbr>開始に<wbr>向けて<wbr>準備を<wbr>進めています。</span>
             </p>
+            <ul class="svc-points">
+              <li><span class="en">Operation</span><span class="ja">運営</span><small>住宅宿泊事業</small></li>
+              <li><span class="en">Management</span><span class="ja">管理</span><small>住宅宿泊管理業</small></li>
+              <li><span class="en">Brokerage</span><span class="ja">仲介</span><small>住宅宿泊仲介業</small></li>
+            </ul>
           </div>
         </div>
       </div>
