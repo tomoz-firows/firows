@@ -235,7 +235,7 @@
   #about .values .v-name small { margin-top: .2rem; }
   #about .values .v-desc { margin-top: .9rem; max-width: none; }
   @media (max-width: 860px) { #about .values { grid-template-columns: 1fr; } }
-  @media (max-width: 860px) { .c-j { font-size: .72rem; white-space: nowrap; } .band-list { grid-template-columns: repeat(3, 1fr); } .band-list li:nth-child(4) { border-left: 0; } .band-list li { border-top: 1px solid rgba(30,33,38,.18); } }
+  @media (max-width: 860px) { .c-j { font-size: .72rem; white-space: nowrap; } .c-w { font-size: .7rem; letter-spacing: -.02em; } .band-list { grid-template-columns: repeat(3, 1fr); } .band-list li:nth-child(4) { border-left: 0; } .band-list li { border-top: 1px solid rgba(30,33,38,.18); } }
 </style>
 
 <style>
@@ -293,6 +293,18 @@
   .mark .letter, .c-l { letter-spacing: -.02em; }
   .v-name small { font-family: var(--jp); }
 </style>
+
+<style>
+  /* Japanese line breaks only between phrases */
+  html[data-lang="ja"] body { word-break: keep-all; overflow-wrap: anywhere; line-break: strict; }
+  h1, h2, h3, h4, .lead, .promise, .svc-catch { text-wrap: balance; }
+  p, dd, li { text-wrap: pretty; }
+</style>
+
+<style>
+  .c-w { white-space: nowrap; }
+  @media (max-width: 860px) { .band-list li { padding-inline: .2rem; } .c-w { font-size: .68rem; letter-spacing: -.03em; } }
+</style>
 </head>
 <body>
 
@@ -320,22 +332,22 @@
       <div class="hero-copy">
         <h1>
           <span class="en">Property in Japan, operated to its full potential.</span>
-          <span class="ja">一つひとつの物件に、<br>最適な運用を。</span>
+          <span class="ja">一つひとつの<wbr>物件に、<br>最適な<wbr>運用を。</span>
         </h1>
         <p>
           <span class="en">From rental management to serviced apartments, FIROWS takes care of every stage of running a property.</span>
-          <span class="ja">不動産の管理から、サービスアパートメントの企画・運営までをトータルに担い、物件の可能性を最大限に引き出します。</span>
+          <span class="ja">不動産の<wbr>管理から、<wbr>サービスアパートメントの<wbr>企画・運営までを<wbr>トータルに<wbr>担い、<wbr>物件の<wbr>可能性を<wbr>最大限に<wbr>引き<wbr>出します。</span>
         </p>
       </div>
     </div>
   </section>
   <div class="band">
     <ul class="wrap band-list" aria-label="FIROWS values">
-        <li><span class="c-l" aria-hidden="true">F</span><span class="c-w">Future</span><span class="c-j">未来を見る</span></li>
-        <li><span class="c-l" aria-hidden="true">I</span><span class="c-w">Innovation</span><span class="c-j">新しい価値を創る</span></li>
-        <li><span class="c-l" aria-hidden="true">R</span><span class="c-w">Reliability</span><span class="c-j">信頼を築く</span></li>
-        <li><span class="c-l" aria-hidden="true">O</span><span class="c-w">Optimization</span><span class="c-j">価値を引き出す</span></li>
-        <li><span class="c-l" aria-hidden="true">W</span><span class="c-w">Wealth</span><span class="c-j">豊かさを育む</span></li>
+        <li><span class="c-l" aria-hidden="true">F</span><span class="c-w">Future</span><span class="c-j">未来を<wbr>見る</span></li>
+        <li><span class="c-l" aria-hidden="true">I</span><span class="c-w">Innovation</span><span class="c-j">新しい<wbr>価値を<wbr>創る</span></li>
+        <li><span class="c-l" aria-hidden="true">R</span><span class="c-w">Reliability</span><span class="c-j">信頼を<wbr>築く</span></li>
+        <li><span class="c-l" aria-hidden="true">O</span><span class="c-w">Optimization</span><span class="c-j">価値を<wbr>引き<wbr>出す</span></li>
+        <li><span class="c-l" aria-hidden="true">W</span><span class="c-w">Wealth</span><span class="c-j">豊かさを<wbr>育む</span></li>
         <li><span class="c-l" aria-hidden="true">S</span><span class="c-w">Sustainability</span><span class="c-j">未来へつなぐ</span></li>
     </ul>
   </div>
@@ -343,56 +355,56 @@
   <section id="about">
     <div class="wrap">
       <div class="section-head">
-        <h2><span class="en">Six values in one name</span><span class="ja">社名に込めた、6つの価値観</span></h2>
+        <h2><span class="en">Six values in one name</span><span class="ja">社名に<wbr>込めた、<wbr>6つの<wbr>価値観</span></h2>
         <p class="lead">
           <span class="en">Each letter of FIROWS stands for a value that shapes how we approach our business.</span>
-          <span class="ja">FIROWS（フィローズ）の名には、私たちのビジネスに対する姿勢を表す6つの価値観が込められています。</span>
+          <span class="ja">FIROWS（フィローズ）<wbr>の<wbr>名には、<wbr>私たちの<wbr>ビジネスに<wbr>対する<wbr>姿勢を<wbr>表す<wbr>6つの<wbr>価値観が<wbr>込められています。</span>
         </p>
       </div>
 
       <ul class="values">
         <li>
           <span class="v-letter" aria-hidden="true">F</span>
-          <span class="v-name">Future<small>未来を見る</small></span>
-          <p class="v-desc"><span class="en">Reading the changes ahead, and planning our next move.</span><span class="ja">時代の変化を先読みし、次の一手を考える。</span></p>
+          <span class="v-name">Future<small>未来を<wbr>見る</small></span>
+          <p class="v-desc"><span class="en">Reading the changes ahead, and planning our next move.</span><span class="ja">時代の<wbr>変化を<wbr>先読みし、<wbr>次の<wbr>一手を<wbr>考える。</span></p>
         </li>
         <li>
           <span class="v-letter" aria-hidden="true">I</span>
-          <span class="v-name">Innovation<small>新しい価値を創る</small></span>
-          <p class="v-desc"><span class="en">Beyond the usual formulas — new possibilities for real estate.</span><span class="ja">枠にとらわれず、不動産に新しい可能性を。</span></p>
+          <span class="v-name">Innovation<small>新しい<wbr>価値を<wbr>創る</small></span>
+          <p class="v-desc"><span class="en">Beyond the usual formulas — new possibilities for real estate.</span><span class="ja">枠にとらわれず、<wbr>不動産に<wbr>新しい<wbr>可能性を。</span></p>
         </li>
         <li>
           <span class="v-letter" aria-hidden="true">R</span>
-          <span class="v-name">Reliability<small>信頼を築く</small></span>
-          <p class="v-desc"><span class="en">We keep every promise, and build trust one step at a time.</span><span class="ja">約束を一つずつ守り、信頼を積み重ねる。</span></p>
+          <span class="v-name">Reliability<small>信頼を<wbr>築く</small></span>
+          <p class="v-desc"><span class="en">We keep every promise, and build trust one step at a time.</span><span class="ja">約束を<wbr>一つずつ<wbr>守り、<wbr>信頼を<wbr>積み<wbr>重ねる。</span></p>
         </li>
         <li>
           <span class="v-letter" aria-hidden="true">O</span>
-          <span class="v-name">Optimization<small>価値を引き出す</small></span>
-          <p class="v-desc"><span class="en">For every property, the form that suits it best.</span><span class="ja">一つひとつの物件に、いちばん合ったかたちを。</span></p>
+          <span class="v-name">Optimization<small>価値を<wbr>引き<wbr>出す</small></span>
+          <p class="v-desc"><span class="en">For every property, the form that suits it best.</span><span class="ja">一つひとつの<wbr>物件に、<wbr>いちばん<wbr>合ったかたちを。</span></p>
         </li>
         <li>
           <span class="v-letter" aria-hidden="true">W</span>
-          <span class="v-name">Wealth<small>豊かさを育む</small></span>
-          <p class="v-desc"><span class="en">Through real estate, we bring richness to people's lives.</span><span class="ja">不動産を通じて、人と暮らしに豊かさを。</span></p>
+          <span class="v-name">Wealth<small>豊かさを<wbr>育む</small></span>
+          <p class="v-desc"><span class="en">Through real estate, we bring richness to people's lives.</span><span class="ja">不動産を<wbr>通じて、<wbr>人と<wbr>暮らしに<wbr>豊かさを。</span></p>
         </li>
         <li>
           <span class="v-letter" aria-hidden="true">S</span>
           <span class="v-name">Sustainability<small>未来へつなぐ</small></span>
-          <p class="v-desc"><span class="en">Buildings, and their bond with the neighborhood, passed on to the next generation.</span><span class="ja">建物も、街とのつながりも、次の世代へ。</span></p>
+          <p class="v-desc"><span class="en">Buildings, and their bond with the neighborhood, passed on to the next generation.</span><span class="ja">建物も、<wbr>街とのつながりも、<wbr>次の<wbr>世代へ。</span></p>
         </li>
       </ul>
 
       <div class="approach">
-        <h2><span class="en">Our approach</span><span class="ja">FIROWSの不動産運用</span></h2>
+        <h2><span class="en">Our approach</span><span class="ja">FIROWSの<wbr>不動産運用</span></h2>
         <div class="prose">
           <p>
             <span class="en">We handle everything from property management to the planning and operation of serviced apartments. By choosing the right way to run each property, we bring out its full potential.</span>
-            <span class="ja">私たちは、不動産の管理から、サービスアパートメントの企画・運営までをトータルに担い、一つひとつの物件に合った最適な運用を通じて、その可能性を最大限に引き出します。</span>
+            <span class="ja">私たちは、<wbr>不動産の<wbr>管理から、<wbr>サービスアパートメントの<wbr>企画・運営までを<wbr>トータルに<wbr>担い、<wbr>一つひとつの<wbr>物件に<wbr>合った<wbr>最適な<wbr>運用を<wbr>通じて、<wbr>その<wbr>可能性を<wbr>最大限に<wbr>引き<wbr>出します。</span>
           </p>
           <p class="closing">
             <span class="en">That is what property operation means to FIROWS.</span>
-            <span class="ja">それが、FIROWSの考える不動産運用です。</span>
+            <span class="ja">それが、<wbr>FIROWSの<wbr>考える<wbr>不動産運用です。</span>
           </p>
         </div>
       </div>
@@ -405,13 +417,13 @@
         <h2><span class="en">What we do</span><span class="ja">事業内容</span></h2>
         <p class="lead">
           <span class="en">One partner for the whole life of a property — whether you own it, live in it, or stay for a few nights.</span>
-          <span class="ja">物件を「持つ人」「住む人」「旅する人」。それぞれに向けたサービスを、ひとつの窓口で。</span>
+          <span class="ja">物件を<wbr>「持つ<wbr>人」<wbr>「住む<wbr>人」<wbr>「旅する<wbr>人」。<wbr>それぞれに<wbr>向けた<wbr>サービスを、<wbr>ひとつの<wbr>窓口で。</span>
         </p>
       </div>
 
       <div class="audience">
         <h3><span class="en">For property owners</span><span class="ja">オーナー様へ</span>
-          <span><span class="en">Protecting and growing the value of your asset</span><span class="ja">資産としての価値を、長く守り育てる</span></span>
+          <span><span class="en">Protecting and growing the value of your asset</span><span class="ja">資産としての<wbr>価値を、<wbr>長く<wbr>守り<wbr>育てる</span></span>
         </h3>
         <div class="svc-list">
           <div class="svc">
@@ -419,11 +431,11 @@
               <span class="svc-jp en">不動産賃貸管理業</span></h4>
             <p class="svc-catch">
               <span class="en">The right plan for every property.</span>
-              <span class="ja">その物件に、いちばん合った運用プランを。</span>
+              <span class="ja">その<wbr>物件に、<wbr>いちばん<wbr>合った<wbr>運用プランを。</span>
             </p>
             <p>
               <span class="en">We look at location, building age and market trends, then propose the way of running your property that suits it best — long-term rental, serviced apartment and more. Day-to-day management, from tenant care to maintenance, is ours to handle.</span>
-              <span class="ja">立地や築年数、市場の動きをふまえて、賃貸やサービスアパートメントなど、物件に合った運用方法をご提案します。入居者様への対応から建物のメンテナンスまで、日々の管理もお任せください。</span>
+              <span class="ja">立地や<wbr>築年数、<wbr>市場の<wbr>動きを<wbr>ふまえて、<wbr>賃貸や<wbr>サービスアパートメントなど、<wbr>物件に<wbr>合った<wbr>運用方法を<wbr>ご提案します。<wbr>入居者様への<wbr>対応から<wbr>建物の<wbr>メンテナンスまで、<wbr>日々の<wbr>管理も<wbr>お任せください。</span>
             </p>
           </div>
           <div class="svc">
@@ -431,7 +443,7 @@
               <span class="svc-jp"><span class="en">サービスアパートメント運営企画管理</span><span class="ja">運営・企画・管理</span></span></h4>
             <p>
               <span class="en">We plan, operate and manage furnished apartments for guests staying weeks or months.</span>
-              <span class="ja">中長期滞在のお客様に向けた家具付きアパートメントを、企画から運営・管理まで一貫して手がけます。</span>
+              <span class="ja">中長期滞在の<wbr>お客様に<wbr>向けた<wbr>家具付き<wbr>アパートメントを、<wbr>企画から<wbr>運営・管理まで<wbr>一貫して<wbr>手がけます。</span>
             </p>
           </div>
           <div class="svc">
@@ -439,7 +451,7 @@
               <span class="svc-jp"><span class="en">住宅宿泊事業 — in preparation</span><span class="ja">準備中</span></span></h4>
             <p>
               <span class="en">We are preparing to run short-stay rentals under Japan's Private Lodging Business Act.</span>
-              <span class="ja">住宅宿泊事業法にもとづく民泊の運営に向けて、準備を進めています。</span>
+              <span class="ja">住宅宿泊事業法にもとづく<wbr>民泊の<wbr>運営に<wbr>向けて、<wbr>準備を<wbr>進めています。</span>
             </p>
           </div>
         </div>
@@ -451,7 +463,7 @@
           <h3>TOMOz</h3>
           <p>
             <span class="en">Through our own platform, TOMOz, we connect guests staying weeks or months with serviced apartments.</span>
-            <span class="ja">自社で運営するプラットフォーム「TOMOz」で、中長期滞在のお客様とサービスアパートメントをつなぎます。</span>
+            <span class="ja">自社で<wbr>運営する<wbr>プラットフォーム「TOMOz」<wbr>で、<wbr>中長期滞在の<wbr>お客様と<wbr>サービスアパートメントを<wbr>つなぎます。</span>
           </p>
         </div>
         <a class="btn" href="https://www.tomoz.jp/" target="_blank" rel="noopener">
@@ -465,25 +477,25 @@
   <section class="philos">
     <div class="wrap">
       <div class="section-head">
-        <h2><span class="en">Philos: the bond between us</span><span class="ja">Philos ― 仲間との絆</span></h2>
+        <h2><span class="en">Philos: the bond between us</span><span class="ja">Philos ― 仲間との<wbr>絆</span></h2>
         <div class="prose">
           <p>
             <span class="en">The name FIROWS also echoes the Greek <i>philos</i>, meaning a friend or someone close. It carries our belief in the bond between people who work together.</span>
-            <span class="ja">「FIROWS」という社名には、ギリシャ語のPhilosが持つ「親しい者・仲間」というニュアンスから、「仲間との絆」という想いも重ねています。</span>
+            <span class="ja">「FIROWS」<wbr>という<wbr>社名には、<wbr>ギリシャ語の<wbr>Philosが<wbr>持つ<wbr>「親しい<wbr>者・仲間」<wbr>という<wbr>ニュアンスから、<wbr>「仲間との<wbr>絆」<wbr>という<wbr>想いも<wbr>重ねています。</span>
           </p>
           <p>
             <span class="en">We care about more than the numbers. At the heart of every business, we believe, is trust between people.</span>
-            <span class="ja">私たちが大切にするのは、単にビジネスの数字を追うことだけではありません。ビジネスの根幹にあるのは、最後は人と人との信頼だと考えています。</span>
+            <span class="ja">私たちが<wbr>大切にするのは、<wbr>単に<wbr>ビジネスの<wbr>数字を<wbr>追うことだけではありません。<wbr>ビジネスの<wbr>根幹にあるのは、<wbr>最後は<wbr>人と<wbr>人との<wbr>信頼だと<wbr>考えています。</span>
           </p>
           <p>
             <span class="en">Owners, residents, travelers, and the colleagues we work alongside — we value our bond with everyone we meet, and aim to be a partner people trust for the long run.</span>
-            <span class="ja">オーナー様、住まう人、旅する人、そして共に働く仲間。関わるすべての人との絆を大切にし、長く信頼されるパートナーであり続けることを目指します。</span>
+            <span class="ja">オーナー様、<wbr>住まう<wbr>人、<wbr>旅する<wbr>人、<wbr>そして<wbr>共に<wbr>働く<wbr>仲間。<wbr>関わるすべての<wbr>人との<wbr>絆を<wbr>大切にし、<wbr>長く<wbr>信頼される<wbr>パートナーであり<wbr>続けることを<wbr>目指します。</span>
           </p>
         </div>
       </div>
       <p class="promise">
         <span class="en">“Leave it to FIROWS, and it's in good hands.”</span>
-        <span class="ja">「FIROWSに任せておけば安心だ」<br>そう思っていただける存在に。</span>
+        <span class="ja">「FIROWSに<wbr>任せておけば<wbr>安心だ」<br>そう<wbr>思っていただける<wbr>存在に。</span>
       </p>
     </div>
   </section>
@@ -520,7 +532,7 @@
             <ul class="ja">
               <li>不動産賃貸管理業</li>
               <li>サービスアパートメント運営企画管理</li>
-              <li>サービスアパートメントのプラットフォーム「TOMOz」の運営</li>
+              <li>サービスアパートメントの<wbr>プラットフォーム「TOMOz」<wbr>の<wbr>運営</li>
             </ul>
           </dd>
         </div>
