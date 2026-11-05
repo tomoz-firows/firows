@@ -333,6 +333,53 @@
   .svc-points li { flex: 1 1 0; min-width: 0; }
   @media (max-width: 860px) { .svc-points li { padding: .45rem .6rem; } .svc-points small { font-size: .66rem; white-space: nowrap; letter-spacing: 0; } }
 </style>
+
+<style>
+  /* why */
+  .why-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 3rem; }
+  .why-list li { padding-top: 1.6rem; border-top: 3px solid var(--sun); }
+  .why-list h3 { margin: 0 0 .7rem; font-size: 1.2rem; line-height: 1.4; }
+  .why-list p { margin: 0; color: var(--muted); }
+  /* news */
+  .news { background: var(--mist); }
+  .news-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+  .news-list li { display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; padding: 1.3rem 0; border-bottom: 1px solid var(--rule); }
+  .news-list time { font-family: var(--mono); color: var(--muted); }
+  .news-list p { margin: 0; }
+  /* contact */
+  .tabs { display: flex; gap: .5rem; margin-bottom: 0; border-bottom: 2px solid var(--ink); }
+  .tabs button { font: inherit; font-weight: 700; padding: .9rem 1.4rem; border: 0; border-radius: 6px 6px 0 0; background: var(--mist); color: var(--muted); cursor: pointer; }
+  .tabs button[aria-selected="true"] { background: var(--ink); color: var(--paper); }
+  .panel { padding: 2.2rem 0 0; }
+  .panel[hidden] { display: none; }
+  .panel-intro { margin: 0 0 2rem; max-width: 40em; font-size: 1.05rem; }
+  .form { display: grid; grid-template-columns: 1fr 1fr; gap: 1.3rem 2rem; max-width: 900px; }
+  .form .full { grid-column: 1 / -1; }
+  .field { display: flex; flex-direction: column; gap: .4rem; }
+  .lbl { font-weight: 600; font-size: .95rem; }
+  .lbl em { font-style: normal; font-size: .72rem; margin-left: .5rem; padding: .05rem .45rem; border-radius: 4px; background: var(--sun); color: var(--ink); vertical-align: .1em; }
+  .field input, .field select, .field textarea {
+    font: inherit; font-size: 1rem; padding: .75rem .9rem; border: 1px solid rgba(30,33,38,.28); border-radius: 6px; background: #fff; color: var(--ink); width: 100%;
+  }
+  .field input:focus-visible, .field select:focus-visible, .field textarea:focus-visible, .check input:focus-visible, .consent input:focus-visible { outline: 3px solid var(--sun); outline-offset: 1px; }
+  .topics { border: 0; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: .6rem 1.5rem; }
+  .topics legend { margin-bottom: .7rem; padding: 0; }
+  .check, .consent { display: flex; gap: .6rem; align-items: flex-start; padding: .75rem .9rem; border: 1px solid rgba(30,33,38,.18); border-radius: 6px; background: #fff; cursor: pointer; line-height: 1.5; }
+  .consent { background: transparent; border: 0; padding: 0; }
+  .check input, .consent input { width: 1.1rem; height: 1.1rem; margin-top: .2rem; accent-color: var(--ink); flex: none; }
+  .btn.send { justify-self: start; border: 0; cursor: pointer; background: var(--ink); color: var(--paper); font-size: 1rem; padding: 1rem 2.4rem; }
+  .btn.send:hover { background: var(--sun); color: var(--ink); }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+  .direct { margin: 2.5rem 0 0; color: var(--muted); }
+  footer .foot-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  footer a { color: var(--mist); }
+  @media (max-width: 860px) {
+    .why-list { grid-template-columns: 1fr; gap: 2rem; }
+    .news-list li { grid-template-columns: 1fr; gap: .3rem; }
+    .form, .topics { grid-template-columns: 1fr; }
+    .tabs button { flex: 1; padding: .8rem .6rem; font-size: .9rem; line-height: 1.35; }
+  }
+</style>
 </head>
 <body>
 
@@ -343,7 +390,9 @@
       <span class="links">
         <a href="#about"><span class="en">About</span><span class="ja">私たちについて</span></a>
         <a href="#services"><span class="en">Services</span><span class="ja">事業内容</span></a>
+        <a href="#news"><span class="en">News</span><span class="ja">お知らせ</span></a>
         <a href="#company"><span class="en">Company</span><span class="ja">会社概要</span></a>
+        <a href="#contact"><span class="en">Contact</span><span class="ja">お問い<wbr>合わせ</span></a>
       </span>
       <div class="lang" role="group" aria-label="Language">
         <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
@@ -463,7 +512,7 @@
             </p>
             <p>
               <span class="en">We look at location, building age and market trends, then propose the way of running your property that suits it best — long-term rental, serviced apartment and more. Day-to-day management, from tenant care to maintenance, is ours to handle.</span>
-              <span class="ja">立地や<wbr>築年数、<wbr>市場の<wbr>動きを<wbr>ふまえて、<wbr>賃貸や<wbr>サービスアパートメントなど、<wbr>物件に<wbr>合った<wbr>運用方法を<wbr>ご提案します。<wbr>入居者様への<wbr>対応から<wbr>建物の<wbr>メンテナンスまで、<wbr>日々の<wbr>管理も<wbr>お任せください。</span>
+              <span class="ja">立地や<wbr>築年数、<wbr>市場の<wbr>動きを<wbr>ふまえて、<wbr>賃貸や<wbr>サービスアパートメントなど、<wbr>物件に<wbr>合った<wbr>運用方法を<wbr>ご提案します。<wbr>入居者様への<wbr>対応から<wbr>建物の<wbr>メンテナンスまで、<wbr>日々の<wbr>管理もお任せください。</span>
             </p>
           </div>
           <div class="svc">
@@ -471,15 +520,15 @@
               <span class="svc-jp"><span class="en">サービスアパートメント運営企画管理</span><span class="ja">運営・企画・管理</span></span></h4>
             <p>
               <span class="en">We plan, operate and manage furnished apartments for guests staying weeks or months.</span>
-              <span class="ja">中長期滞在の<wbr>お客様に<wbr>向けた<wbr>家具付き<wbr>アパートメントを、<wbr>企画から<wbr>運営・管理まで<wbr>一貫して<wbr>手がけます。</span>
+              <span class="ja">中長期滞在のお客様に<wbr>向けた<wbr>家具付き<wbr>アパートメントを、<wbr>企画から<wbr>運営・管理まで<wbr>一貫して<wbr>手がけます。</span>
             </p>
           </div>
           <div class="svc">
-            <h4><span class="en">Vacation rentals (minpaku)</span><span class="ja">住宅宿泊事業<wbr>（民泊）</span>
+            <h4><span class="en">Vacation rentals (minpaku)</span><span class="ja">住宅宿泊事業（民泊）</span>
               <span class="badge"><span class="en">In preparation</span><span class="ja">準備中</span></span></h4>
             <p>
               <span class="en">We are preparing to start three businesses under Japan's Private Lodging Business Act:</span>
-              <span class="ja">住宅宿泊事業法に<wbr>もとづく、<wbr>次の<wbr>3つの<wbr>事業の<wbr>開始に<wbr>向けて<wbr>準備を<wbr>進めています。</span>
+              <span class="ja">住宅宿泊事業法にもとづく、<wbr>次の<wbr>3つの<wbr>事業の<wbr>開始に<wbr>向けて<wbr>準備を<wbr>進めています。</span>
             </p>
             <ul class="svc-points">
               <li><span class="en">Operation</span><span class="ja">運営</span><small>住宅宿泊事業</small></li>
@@ -491,7 +540,7 @@
       </div>
 
       <div class="audience">
-        <h3><span class="en">For guests</span><span class="ja">ご滞在の<wbr>お客様へ</span>
+        <h3><span class="en">For guests</span><span class="ja">ご滞在のお客様へ</span>
           <span><span class="en">Stays that feel like home</span><span class="ja">暮らすように<wbr>泊まる</span></span>
         </h3>
         <div class="svc-list">
@@ -500,15 +549,39 @@
               <span class="svc-jp"><span class="en">TOMOz</span><span class="ja">TOMOz</span></span></h4>
             <p>
               <span class="en">Through our own platform, TOMOz, we connect guests staying weeks or months with serviced apartments.</span>
-              <span class="ja">自社で<wbr>運営する<wbr>プラットフォーム<wbr>「TOMOz」で、<wbr>中長期滞在の<wbr>お客様と<wbr>サービスアパートメントを<wbr>つなぎます。</span>
+              <span class="ja">自社で<wbr>運営する<wbr>プラットフォーム「TOMOz」<wbr>で、<wbr>中長期滞在のお客様と<wbr>サービスアパートメントを<wbr>つなぎます。</span>
             </p>
             <a class="ext" href="https://www.tomoz.jp/" target="_blank" rel="noopener">
-              <span class="en">Visit TOMOz</span><span class="ja">TOMOzを見る</span>
+              <span class="en">Visit TOMOz</span><span class="ja">TOMOzを<wbr>見る</span>
               <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1h8v8M11 1 1 11" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
             </a>
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+
+  <section id="why" class="why">
+    <div class="wrap">
+      <div class="section-head">
+        <h2><span class="en">Why FIROWS</span><span class="ja">FIROWSの<wbr>強み</span></h2>
+        <p class="lead"><span class="en">Experience built on the ground — with international residents, serviced apartments and vacation rentals.</span><span class="ja">外国人のお客様の<wbr>住まいと<wbr>滞在に、<wbr>現場で<wbr>向き<wbr>合ってきた<wbr>経験があります。</span></p>
+      </div>
+      <ul class="why-list">
+        <li>
+          <h3><span class="en">Years with international residents</span><span class="ja">長年の、<wbr>外国人向け<wbr>住まいの<wbr>サポート</span></h3>
+          <p><span class="en">Our founder has spent many years helping international residents find their homes in Japan, and knows the questions and worries that come with living here.</span><span class="ja">代表は<wbr>長年にわたり、<wbr>外国人のお客様の<wbr>日本での<wbr>住まい<wbr>探しに<wbr>携わってきました。<wbr>日本で<wbr>暮らすときの<wbr>疑問や<wbr>不安を、<wbr>よく<wbr>知っています。</span></p>
+        </li>
+        <li>
+          <h3><span class="en">From launch to daily operation</span><span class="ja">立ち<wbr>上げから、<wbr>日々の<wbr>運営まで</span></h3>
+          <p><span class="en">Our founder has launched serviced apartment and vacation rental businesses from scratch and run them day to day. What we propose is a plan we know how to operate.</span><span class="ja">代表は<wbr>サービスアパートメントや<wbr>民泊の<wbr>事業を、<wbr>ゼロからの<wbr>立ち<wbr>上げから<wbr>日々の<wbr>運営まで<wbr>手がけてきました。<wbr>ご提案するのは、<wbr>実際に<wbr>運営できる<wbr>計画です。</span></p>
+        </li>
+        <li>
+          <h3><span class="en">Global roots, independent judgement</span><span class="ja">グローバルな<wbr>視点と、<wbr>独立系の<wbr>柔軟さ</span></h3>
+          <p><span class="en">After working at Flexible Living, a Singapore-based startup, our founder went independent. We pair a global perspective with the freedom of an independent firm, so we can propose what truly fits each property.</span><span class="ja">シンガポール系スタートアップ「Flexible Living」<wbr>での<wbr>経験を<wbr>経て<wbr>独立。<wbr>グローバルな<wbr>視点と、<wbr>特定の<wbr>系列にしばられない<wbr>独立系ならではの<wbr>柔軟さで、<wbr>物件ごとに<wbr>本当に<wbr>合った<wbr>提案を<wbr>します。</span></p>
+        </li>
+      </ul>
     </div>
   </section>
 
@@ -535,6 +608,18 @@
         <span class="en">“Leave it to FIROWS, and it's in good hands.”</span>
         <span class="ja">「FIROWSに<wbr>任せておけば<wbr>安心だ」<br>そう<wbr>思っていただける<wbr>存在に。</span>
       </p>
+    </div>
+  </section>
+
+
+  <section id="news" class="news">
+    <div class="wrap">
+      <div class="section-head">
+        <h2><span class="en">News</span><span class="ja">お知らせ</span></h2>
+      </div>
+      <ul class="news-list">
+        <li><time datetime="2026-11-05">2026.11.05</time><p><span class="en">Our website is now live.</span><span class="ja">ウェブサイトを<wbr>公開しました。</span></p></li>
+      </ul>
     </div>
   </section>
 
@@ -575,10 +660,70 @@
           </dd>
         </div>
         <div>
+          <dt><span class="en">Email</span><span class="ja">メール</span></dt>
+          <dd><a href="mailto:info@firows.com">info@firows.com</a></dd>
+        </div>
+        <div>
           <dt><span class="en">Platform</span><span class="ja">運営サービス</span></dt>
           <dd><a href="https://www.tomoz.jp/" target="_blank" rel="noopener">TOMOz (tomoz.jp)</a></dd>
         </div>
       </dl>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <h2><span class="en">Contact</span><span class="ja">お問い<wbr>合わせ</span></h2>
+        <p class="lead"><span class="en">Choose the form that fits you. We'll reply by email.</span><span class="ja">ご相談内容に<wbr>合わせて<wbr>フォームを<wbr>お選びください。<wbr>メールでご返信します。</span></p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Inquiry type">
+        <button type="button" role="tab" id="tab-owner" aria-controls="panel-owner" aria-selected="true"><span class="en">For property owners</span><span class="ja">オーナー様</span></button>
+        <button type="button" role="tab" id="tab-res" aria-controls="panel-res" aria-selected="false"><span class="en">Looking for a place to stay</span><span class="ja">お住まい・ご滞在先を<wbr>お探しの<wbr>方</span></button>
+      </div>
+      <div class="panel" role="tabpanel" id="panel-owner" aria-labelledby="tab-owner">
+        <p class="panel-intro"><span class="en">Not sure which option suits your property? That is exactly what we are here for. Even at an early stage, we will look at your property and suggest the way of running it that fits best.</span><span class="ja">「自分の<wbr>物件には、<wbr>どの<wbr>運用が<wbr>合うのか<wbr>分からない」<wbr>という<wbr>段階でも<wbr>大丈夫です。<wbr>物件の<wbr>状況を<wbr>うかがい、<wbr>いちばん<wbr>合った<wbr>運用方法を<wbr>ご提案します。</span></p>
+
+        <form class="form" action="https://formsubmit.co/info@firows.com" method="POST">
+          <input type="hidden" name="_subject" value="[FIROWS] Owner inquiry / オーナー様からのお問い合わせ"><input type="hidden" name="_next" value="https://firows.com/thanks.html"><input type="hidden" name="_template" value="table"><input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="inquiry_type" value="Owner / オーナー様">
+          <fieldset class="full topics">
+            <legend class="lbl"><span class="en">What would you like to discuss?</span><span class="ja">ご相談内容（複数選択可）</span></legend>
+            <label class="check"><input type="checkbox" name="topics" value="Rental property management / 賃貸管理を任せたい"> <span><span class="en">Rental property management</span><span class="ja">賃貸管理を<wbr>任せたい</span></span></label><label class="check"><input type="checkbox" name="topics" value="Serviced apartment / サービスアパートメントとして運用したい"> <span><span class="en">Running it as a serviced apartment</span><span class="ja">サービスアパートメントとして<wbr>運用したい</span></span></label><label class="check"><input type="checkbox" name="topics" value="Vacation rental / 民泊として運用したい（準備中）"> <span><span class="en">Running it as a vacation rental (in preparation)</span><span class="ja">民泊として<wbr>運用したい<wbr>（開始準備中）</span></span></label><label class="check"><input type="checkbox" name="topics" value="Not sure yet / どの運用が合うか相談したい"> <span><span class="en">Not sure yet — I'd like advice</span><span class="ja">どの<wbr>運用が<wbr>合うか<wbr>相談したい</span></span></label>
+          </fieldset>
+          <label class="field"><span class="lbl"><span class="en">Name</span><span class="ja">お名前</span><em><span class="en">Required</span><span class="ja">必須</span></em></span><input type="text" name="name" required autocomplete="name"></label>
+          <label class="field"><span class="lbl"><span class="en">Company (optional)</span><span class="ja">会社名（任意）</span></span><input type="text" name="company" autocomplete="organization"></label>
+          <label class="field"><span class="lbl"><span class="en">Email</span><span class="ja">メールアドレス</span><em><span class="en">Required</span><span class="ja">必須</span></em></span><input type="email" name="email" required autocomplete="email"></label>
+          <label class="field"><span class="lbl"><span class="en">Phone (optional)</span><span class="ja">電話番号（任意）</span></span><input type="tel" name="phone" autocomplete="tel"></label>
+          <label class="field"><span class="lbl"><span class="en">Property location (city / ward)</span><span class="ja">物件の<wbr>所在地（市区町村まで）</span><em><span class="en">Required</span><span class="ja">必須</span></em></span><input type="text" name="property_location" required></label>
+          <label class="field"><span class="lbl"><span class="en">Property type</span><span class="ja">物件の<wbr>種類</span></span><select name="property_type"><option value="">—</option><option value="Whole building / 一棟マンション・アパート">Whole building / 一棟マンション・アパート</option><option value="Condominium unit / 区分マンション">Condominium unit / 区分マンション</option><option value="House / 戸建て">House / 戸建て</option><option value="Other / その他">Other / その<wbr>他</option></select></label>
+          <label class="field full"><span class="lbl"><span class="en">Details</span><span class="ja">ご相談の<wbr>詳細</span></span><textarea name="message" rows="5"></textarea></label>
+          <label class="consent full"><input type="checkbox" name="privacy_consent" value="agreed" required> <span><span class="en">I agree to the <a href="privacy.html">Privacy Policy</a>.</span><span class="ja"><a href="privacy.html">プライバシーポリシー</a>に<wbr>同意します。</span></span></label>
+          <button type="submit" class="btn send"><span class="en">Send</span><span class="ja">送信する</span></button>
+        </form>
+
+      </div>
+      <div class="panel" role="tabpanel" id="panel-res" aria-labelledby="tab-res">
+        <p class="panel-intro"><span class="en">Looking for a furnished apartment for a stay of weeks or months? Tell us your plans and we will help you find the right place.</span><span class="ja">数週間〜数か<wbr>月の<wbr>滞在に<wbr>向けて、<wbr>家具付きのお部屋を<wbr>お探しですか？ご希望を<wbr>お聞かせください。</span></p>
+
+        <form class="form" action="https://formsubmit.co/info@firows.com" method="POST">
+          <input type="hidden" name="_subject" value="[FIROWS] Stay inquiry / ご滞在のお問い合わせ"><input type="hidden" name="_next" value="https://firows.com/thanks.html"><input type="hidden" name="_template" value="table"><input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="inquiry_type" value="Resident / お住まい・ご滞在">
+          <label class="field"><span class="lbl"><span class="en">Name</span><span class="ja">お名前</span><em><span class="en">Required</span><span class="ja">必須</span></em></span><input type="text" name="name" required autocomplete="name"></label>
+          <label class="field"><span class="lbl"><span class="en">Email</span><span class="ja">メールアドレス</span><em><span class="en">Required</span><span class="ja">必須</span></em></span><input type="email" name="email" required autocomplete="email"></label>
+          <label class="field"><span class="lbl"><span class="en">Phone (optional)</span><span class="ja">電話番号（任意）</span></span><input type="tel" name="phone" autocomplete="tel"></label>
+          <label class="field"><span class="lbl"><span class="en">Preferred language</span><span class="ja">ご希望の<wbr>言語</span></span><select name="language"><option value="">—</option><option value="English">English</option><option value="日本語">日本語</option><option value="Other / その他">Other / その<wbr>他</option></select></label>
+          <label class="field"><span class="lbl"><span class="en">Move-in month</span><span class="ja">入居希望時期</span></span><input type="month" name="move_in"></label>
+          <label class="field"><span class="lbl"><span class="en">Length of stay</span><span class="ja">滞在予定期間</span></span><select name="length_of_stay"><option value="">—</option><option value="Under 1 month / 1か月未満">Under 1 month / 1か<wbr>月未満</option><option value="1–3 months / 1〜3か月">1–3 months / 1〜3か<wbr>月</option><option value="3–6 months / 3〜6か月">3–6 months / 3〜6か<wbr>月</option><option value="6 months or more / 6か月以上">6 months or more / 6か<wbr>月以上</option><option value="Not sure / 未定">Not sure / 未定</option></select></label>
+          <label class="field"><span class="lbl"><span class="en">Preferred area</span><span class="ja">ご希望の<wbr>エリア</span></span><input type="text" name="area"></label>
+          <label class="field"><span class="lbl"><span class="en">Number of people</span><span class="ja">ご入居人数</span></span><input type="number" name="guests" min="1" max="10"></label>
+          <label class="field full"><span class="lbl"><span class="en">Anything else we should know</span><span class="ja">そのほかのご希望</span></span><textarea name="message" rows="5"></textarea></label>
+          <label class="consent full"><input type="checkbox" name="privacy_consent" value="agreed" required> <span><span class="en">I agree to the <a href="privacy.html">Privacy Policy</a>.</span><span class="ja"><a href="privacy.html">プライバシーポリシー</a>に<wbr>同意します。</span></span></label>
+          <button type="submit" class="btn send"><span class="en">Send</span><span class="ja">送信する</span></button>
+        </form>
+
+      </div>
+      <p class="direct"><span class="en">You can also email us directly at <a href="mailto:info@firows.com">info@firows.com</a>.</span><span class="ja">メールでのお問い<wbr>合わせは <a href="mailto:info@firows.com">info@firows.com</a> まで。</span></p>
     </div>
   </section>
 </main>
@@ -586,7 +731,7 @@
 <footer>
   <div class="wrap">
     <span class="brand"><svg class="brand-mark" viewBox="0 0 96 96" aria-hidden="true"><rect x="2" y="66" width="28" height="28" fill="currentColor"/><rect x="34" y="66" width="28" height="28" fill="currentColor"/><rect x="66" y="66" width="28" height="28" fill="currentColor"/><rect x="34" y="34" width="28" height="28" fill="currentColor"/><rect x="66" y="34" width="28" height="28" fill="currentColor"/><rect x="66" y="2" width="28" height="28" fill="#F2C230"/></svg><span>FIROWS</span></span>
-    <span>&copy; <span id="year">2026</span> FIROWS Co., Ltd.</span>
+    <span class="foot-links"><a href="#contact"><span class="en">Contact</span><span class="ja">お問い<wbr>合わせ</span></a><a href="privacy.html"><span class="en">Privacy Policy</span><span class="ja">プライバシーポリシー</span></a><span>&copy; <span id="year">2026</span> FIROWS Co., Ltd.</span></span>
   </div>
 </footer>
 
@@ -633,6 +778,22 @@
       }
     }
     setTimeout(step, 450);
+  })();
+</script>
+
+<script>
+  (function () {
+    var tabs = document.querySelectorAll('.tabs [role="tab"]');
+    function show(id) {
+      tabs.forEach(function (t) {
+        var on = t.id === id;
+        t.setAttribute('aria-selected', String(on));
+        t.tabIndex = on ? 0 : -1;
+        document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+      });
+    }
+    tabs.forEach(function (t) { t.addEventListener('click', function () { show(t.id); }); });
+    if (tabs.length) show(tabs[0].id);
   })();
 </script>
 </body>
