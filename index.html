@@ -417,6 +417,16 @@
   .svc .ext.ig img { width: 18px; height: 18px; }
   footer .foot-ig { display: inline-flex; align-items: center; gap: .45rem; }
 </style>
+
+<style>
+  .svc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 3.5rem; border-top: 1px solid rgba(30,33,38,.18); }
+  .svc-grid .svc { padding: 2rem 0 2.2rem; border-bottom: 1px solid rgba(30,33,38,.18); background: none; border-radius: 0; }
+  .svc-grid .svc h4 { margin-bottom: .7rem; }
+  @media (max-width: 860px) {
+    .svc-grid { grid-template-columns: 1fr; gap: 0; }
+    .svc-grid .svc { padding: 1.6rem 0 1.8rem; background: none; }
+  }
+</style>
 </head>
 <body>
 
@@ -529,101 +539,34 @@
     <div class="wrap">
       <div class="section-head">
         <h2><span class="en">What we do</span><span class="ja">事業内容</span></h2>
-        <p class="lead">
-          <span class="en">One partner for the whole life of a property — whether you own it, live in it, or stay for a few nights.</span>
-          <span class="ja">物件を<wbr>「持つ<wbr>人」<wbr>「住む<wbr>人」<wbr>「旅する<wbr>人」。<wbr>それぞれに<wbr>向けた<wbr>サービスを、<wbr>ひとつの<wbr>窓口で。</span>
-        </p>
+        <p class="lead"><span class="en">These are the services we can take on for you.</span><span class="ja">FIROWSがお引き<wbr>受けする<wbr>業務です。</span></p>
       </div>
-
-      <div class="audience">
-        <h3><span class="en">For property owners</span><span class="ja">オーナー様へ</span>
-          <span><span class="en">Protecting and growing the value of your asset</span><span class="ja">資産としての<wbr>価値を、<wbr>長く<wbr>守り<wbr>育てる</span></span>
-        </h3>
-        <div class="svc-list">
-          <div class="svc">
-            <h4><span class="en">Rental property management</span><span class="ja">不動産賃貸管理</span>
-              <span class="svc-jp en">不動産賃貸管理業</span></h4>
-            <p class="svc-catch">
-              <span class="en">The right plan for every property.</span>
-              <span class="ja">その<wbr>物件に、<wbr>いちばん<wbr>合った<wbr>運用プランを。</span>
-            </p>
-            <p>
-              <span class="en">We look at location, building age and market trends, then propose the way of running your property that suits it best — long-term rental, serviced apartment and more. Day-to-day management, from tenant care to maintenance, is ours to handle.</span>
-              <span class="ja">立地や<wbr>築年数、<wbr>市場の<wbr>動きを<wbr>ふまえて、<wbr>賃貸や<wbr>サービスアパートメントなど、<wbr>物件に<wbr>合った<wbr>運用方法を<wbr>ご提案します。<wbr>入居者様への<wbr>対応から<wbr>建物の<wbr>メンテナンスまで、<wbr>日々の<wbr>管理もお任せください。</span>
-            </p>
-          </div>
-          <div class="svc">
-            <h4><span class="en">Serviced apartments</span><span class="ja">サービスアパートメント</span>
-              <span class="svc-jp"><span class="en">サービスアパートメント運営企画管理</span><span class="ja">運営・企画・管理</span></span></h4>
-            <p>
-              <span class="en">We plan, operate and manage furnished apartments for guests staying weeks or months.</span>
-              <span class="ja">中長期滞在のお客様に<wbr>向けた<wbr>家具付き<wbr>アパートメントを、<wbr>企画から<wbr>運営・管理まで<wbr>一貫して<wbr>手がけます。</span>
-            </p>
-          </div>
-          <div class="svc">
-            <h4><span class="en">Vacation rentals (minpaku)</span><span class="ja">住宅宿泊事業（民泊）</span>
-              <span class="badge"><span class="en">In preparation</span><span class="ja">準備中</span></span></h4>
-            <p>
-              <span class="en">We are preparing to start three businesses under Japan's Private Lodging Business Act:</span>
-              <span class="ja">住宅宿泊事業法にもとづく、<wbr>次の<wbr>3つの<wbr>事業の<wbr>開始に<wbr>向けて<wbr>準備を<wbr>進めています。</span>
-            </p>
-            <ul class="svc-points">
-              <li><span class="en">Operation</span><span class="ja">運営</span><small>住宅宿泊事業</small></li>
-              <li><span class="en">Management</span><span class="ja">管理</span><small>住宅宿泊管理業</small></li>
-              <li><span class="en">Brokerage</span><span class="ja">仲介</span><small>住宅宿泊仲介業</small></li>
-            </ul>
-          </div>
+      <div class="svc-grid">
+        <div class="svc">
+          <h4><span class="en">Rental property management</span><span class="ja">不動産賃貸管理</span></h4>
+          <p><span class="en">We take on the management of rental properties on owners' behalf: tenant care, building upkeep and regular reporting.</span><span class="ja">オーナー様に<wbr>代わり、<wbr>入居者様への<wbr>対応、<wbr>建物の<wbr>維持管理、<wbr>定期的なご報告など、<wbr>賃貸物件の<wbr>管理業務を<wbr>お引き<wbr>受けします。</span></p>
+          
         </div>
-      </div>
-
-      <div class="audience">
-        <h3><span class="en">For guests</span><span class="ja">ご滞在のお客様へ</span>
-          <span><span class="en">Stays that feel like home</span><span class="ja">暮らすように<wbr>泊まる</span></span>
-        </h3>
-        <div class="svc-list">
-          <div class="svc">
-            <h4><span class="en">Platform business</span><span class="ja">プラットフォーム事業</span>
-              <span class="svc-jp"><span class="en">TOMOz</span><span class="ja">TOMOz</span></span></h4>
-            <p>
-              <span class="en">Through our own platform, TOMOz, we connect guests staying weeks or months with serviced apartments.</span>
-              <span class="ja">自社で<wbr>運営する<wbr>プラットフォーム「TOMOz」<wbr>で、<wbr>中長期滞在のお客様と<wbr>サービスアパートメントを<wbr>つなぎます。</span>
-            </p>
-            <div class="ext-row"><a class="ext" href="https://www.tomoz.jp/" target="_blank" rel="noopener">
-              <span class="en">Visit TOMOz</span><span class="ja">TOMOzを<wbr>見る</span>
-              <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1h8v8M11 1 1 11" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
-            </a><a class="ext ig" href="https://www.instagram.com/tomoz_stay/" target="_blank" rel="noopener"><img src="instagram.png" alt="" width="18" height="18"><span>@tomoz_stay</span></a></div>
-          </div>
+        <div class="svc">
+          <h4><span class="en">Serviced apartment operation and planning</span><span class="ja">サービスアパートメントの<wbr>運営・企画</span></h4>
+          <p><span class="en">We plan your property as a furnished serviced apartment for stays of weeks or months, and take on its operation and management.</span><span class="ja">オーナー様の<wbr>物件を、<wbr>中長期滞在向けの<wbr>家具付き<wbr>サービスアパートメントとして<wbr>企画し、<wbr>運営・管理までお引き<wbr>受けします。</span></p>
+          
+        </div>
+        <div class="svc">
+          <h4><span class="en">Serviced apartment platform (TOMOz)</span><span class="ja">サービスアパートメントの<wbr>プラットフォーム運営（TOMOz）</span></h4>
+          <p><span class="en">Through our own platform, TOMOz, we connect guests staying weeks or months with serviced apartments.</span><span class="ja">自社で<wbr>運営する<wbr>プラットフォーム「TOMOz」<wbr>で、<wbr>中長期滞在のお客様と<wbr>サービスアパートメントを<wbr>つなぎます。</span></p>
+          <div class="ext-row"><a class="ext" href="https://www.tomoz.jp/" target="_blank" rel="noopener"><span class="en">Visit TOMOz</span><span class="ja">TOMOzを<wbr>見る</span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1h8v8M11 1 1 11" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a><a class="ext ig" href="https://www.instagram.com/tomoz_stay/" target="_blank" rel="noopener"><img src="instagram.png" alt="" width="18" height="18"><span>@tomoz_stay</span></a></div>
+        </div>
+        <div class="svc">
+          <h4><span class="en">Private lodging business, management and brokerage</span><span class="ja">住宅宿泊事業・住宅宿泊管理業・住宅宿泊仲介業</span><span class="badge"><span class="en">In preparation</span><span class="ja">準備中</span></span></h4>
+          <p><span class="en">We are preparing the notification and registrations needed to operate, manage and broker vacation rentals under Japan's Private Lodging Business Act.</span><span class="ja">住宅宿泊事業法にもとづく<wbr>民泊の<wbr>運営・管理・仲介について、<wbr>届出・登録に<wbr>向けて<wbr>準備を<wbr>進めています。</span></p>
+          
         </div>
       </div>
     </div>
   </section>
 
 
-  <section id="why" class="why">
-    <div class="wrap">
-      <div class="section-head">
-        <h2><span class="en">Why work with FIROWS</span><span class="ja">FIROWSに<wbr>任せる<wbr>理由</span></h2>
-      </div>
-      <ul class="why-list">
-        <li>
-          <h3><span class="en">Twenty years on the ground with international residents</span><span class="ja">20年、<wbr>外国人の<wbr>住まいの<wbr>現場に<wbr>立ってきた</span></h3>
-          <p><span class="en">From leasing for international residents to running hotels, serviced apartments and vacation rentals, we have solved problems on site, one by one — from misunderstandings born of language and culture to issues that arise during a stay. That accumulated experience is the foundation of operations that owners and residents alike can trust.</span><span class="ja">外国人向けの<wbr>賃貸仲介から、<wbr>ホテル、<wbr>サービスアパートメント、<wbr>民泊の<wbr>運営まで。<wbr>言葉や<wbr>文化の<wbr>違いから<wbr>生まれる<wbr>行き<wbr>違いも、<wbr>滞在中に<wbr>起きる<wbr>問題も、<wbr>現場で<wbr>一つひとつ<wbr>解決してきました。<wbr>その<wbr>積み<wbr>重ねが、<wbr>オーナー様にも<wbr>入居者様にも<wbr>安心していただける<wbr>運営の<wbr>土台です。</span></p>
-        </li>
-        <li>
-          <h3><span class="en">We have built these businesses from zero</span><span class="ja">事業を、<wbr>ゼロから<wbr>立ち<wbr>上げてきた</span></h3>
-          <p><span class="en">We set up the Japanese operations of two international serviced apartment companies and have been part of hotel launches. Having been through every stage, from designing how things run to day-to-day operation, we propose plans that work in practice, not just on paper.</span><span class="ja">外資系サービスアパートメント2社で<wbr>日本法人を<wbr>立ち<wbr>上げ、<wbr>ホテルの<wbr>開業にも<wbr>携わってきました。<wbr>運営の<wbr>仕組みづくりから<wbr>日々の<wbr>オペレーションまで、<wbr>立ち<wbr>上げのすべての<wbr>段階を<wbr>経験しているからこそ、<wbr>机上の<wbr>計画ではなく、<wbr>実際に<wbr>回る<wbr>運営を<wbr>ご提案できます。</span></p>
-        </li>
-        <li>
-          <h3><span class="en">Any length of stay, any purpose — one company</span><span class="ja">滞在の<wbr>長さも<wbr>目的も、<wbr>1社で<wbr>完結</span></h3>
-          <p><span class="en">A few nights of travel, a few months on business, a few years on assignment: whatever changes, your point of contact stays the same. We take care of everything from the home itself to settling in to life in Japan. For owners, it means the way a property is used can change with demand.</span><span class="ja">数日の<wbr>旅行から、<wbr>数か<wbr>月の<wbr>出張、<wbr>数年の<wbr>赴任まで。<wbr>滞在の<wbr>長さや<wbr>目的が<wbr>変わっても、<wbr>窓口は<wbr>FIROWSひとつ。<wbr>住まいのご用意から<wbr>日本での<wbr>生活の<wbr>立ち<wbr>上げまで、<wbr>まとめてお任せいただけます。<wbr>オーナー様にとっては、<wbr>需要に<wbr>合わせて<wbr>物件の<wbr>使い<wbr>方を<wbr>柔軟に<wbr>選べるということでもあります。</span></p>
-        </li>
-        <li>
-          <h3><span class="en">Independent, so the property comes first</span><span class="ja">系列にしばられず、<wbr>物件本位で<wbr>考える</span></h3>
-          <p><span class="en">As an independent company, we have no fixed product or plan to sell. We look at each property's location and condition, and propose the best option for it — long-term rental, serviced apartment or vacation rental.</span><span class="ja">独立系の<wbr>FIROWSには、<wbr>決まった<wbr>商品や、<wbr>売りたい<wbr>プランはありません。<wbr>物件の<wbr>立地や<wbr>状態を<wbr>見て、<wbr>賃貸、<wbr>サービスアパートメント、<wbr>民泊の<wbr>中から、<wbr>その<wbr>物件にとって<wbr>最善の<wbr>選択肢を<wbr>ご提案します。</span></p>
-        </li>
-      </ul>
-    </div>
-  </section>
 
 
 
